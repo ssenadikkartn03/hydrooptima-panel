@@ -12,7 +12,7 @@ import warnings
 warnings.filterwarnings('ignore', category=UserWarning)
 
 # --- 1. SAYFA VE TASARIM YAPILANDIRMASI ---
-st.set_page_config(page_title="HydroOptima | Enterprise SCADA v3", layout="wide", initial_sidebar_state="expanded")
+st.set_page_config(page_title="Hydroptima | Enterprise SCADA v3", layout="wide", initial_sidebar_state="expanded")
 
 # Kurumsal CSS
 st.markdown("""
@@ -57,7 +57,7 @@ turkiye_tesisleri = pd.DataFrame({
 })
 
 # --- 4. SIDEBAR: KOMUTA VE DOZAJ MERKEZI ---
-st.sidebar.title("HydroOptima Node")
+st.sidebar.title("Hydroptima Node")
 secilen_tesis = st.sidebar.selectbox("TR Tesisi Secin", turkiye_tesisleri['Tesis_Adi'])
 aktif_tesis = turkiye_tesisleri[turkiye_tesisleri['Tesis_Adi'] == secilen_tesis].iloc[0]
 
@@ -111,7 +111,7 @@ net_kar = gelir - maliyet
 roi_gun = 1300 / net_kar if net_kar > 0 else 0
 
 # --- 6. ANA EKRAN TASARIMI ---
-st.title(f"HydroOptima TR | {secilen_tesis}")
+st.title(f"Hydroptima TR | {secilen_tesis}")
 st.info(f"Node Strategy: {kaynak_modu} kullanilarak enerji optimizasyonu saglaniyor.")
 
 # EN UST GAZ METRIKLERI
